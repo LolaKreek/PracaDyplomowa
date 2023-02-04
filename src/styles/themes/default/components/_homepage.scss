@@ -1,0 +1,31 @@
+// STYLES FOR THE "HOMEPAGE" PART
+.main-wrapper__main-content-container{
+    @include flex();
+    @include justifyContent(space-between);
+    @include flexWrap(nowrap);
+
+    .main-content-container__main-category-container{
+        @include flexBasis($fbs-65);
+
+        .main-category-container__header{
+            margin-left: $m-10px;
+        }
+    }
+
+    .main-content-container__main-top-container{
+        @include flexBasis($fbs-30);
+
+        .main-top-container__header{
+            margin-right: $m-10px;
+        }
+    }
+
+    .main-category-container__header,
+    .main-top-container__header{
+        font-family: $f-montserrat-alternates;
+        text-align: center;
+        border: $bor-3px solid $c-blue-diamond-opacity-100;        
+        border-radius: $br-5px;
+        @include boxShadow($boxsh-5px $c-blue-diamond-opacity-80);
+    }
+}
