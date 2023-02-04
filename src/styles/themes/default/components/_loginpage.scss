@@ -1,3 +1,4 @@
+// STYLES FOR THE "LOGIN" PAGE
 .main-wrapper__main-header{
     text-align: center;
     font-family: $f-work-sans;
@@ -29,8 +30,8 @@
         }
 
         .form__input-container{
-            display: flex;
-            flex-direction: column;
+            @include flex();
+            @include flexDirection(column);
 
             .input-user-name{
                 width: $w-350px;
@@ -63,7 +64,7 @@
             }
             
             .input-submit{
-                background-image: linear-gradient(to right, $c-black 15%, $c-violet-red-opacity-100 100%);
+                @include background($c-black, $c-violet-red-opacity-100);
                 border: 0;
                 margin: $m-10px auto;
                 padding: $p-10px $p-25px;
@@ -82,9 +83,9 @@
 
         .main-wrapper__others-logins{
             width: $w-40per;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-around;
+            @include flex();
+            @include flexDirection(row);
+            @include justifyContent(space-around);
             margin: 0 auto;
 
             .others-logins__icon{
