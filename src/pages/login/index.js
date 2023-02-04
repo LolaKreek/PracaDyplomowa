@@ -9,7 +9,7 @@ const Login = () => {
 
     return(
         <div className='login__main-wrapper'>
-            <Menu />
+            <Menu component='/login' />
             <h1 className='main-wrapper__main-header'>Strona do logowania</h1>
 
             <div className='main-wrapper__form-container'>

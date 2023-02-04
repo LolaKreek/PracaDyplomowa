@@ -9,7 +9,7 @@ const Instruction = () => {
   
   return (
     <div className="main-wrapper">
-        <Menu />
+        <Menu component='/instruction' />
         <h1 className='main-header'>Instrukcja</h1>
         <Footer />
     </div>

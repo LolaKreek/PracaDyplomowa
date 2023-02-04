@@ -9,7 +9,7 @@ const Profile = () => {
   
   return (
     <div className="main-wrapper">
-        <Menu />
+        <Menu component='/profile'/>
         <h1 className='main-header'>Profile</h1>
         <Footer />
     </div>

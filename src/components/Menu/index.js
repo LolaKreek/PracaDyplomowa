@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import components from '../index';
 
 //Creating a part "Menu"
-const Menu = () => {
+const Menu = ({component}) => {
     // //Import of required components
     const {Print, List} = components;
 
@@ -22,7 +22,7 @@ const Menu = () => {
                 </div>
 
                 <div className="menu__container-list">
-                    <List class='menu__list list' element='a' lists={menuList} />
+                    <List class='menu__list list' currentPage={component} element='a' lists={menuList} />
                 </div>
             </div>
         </nav>

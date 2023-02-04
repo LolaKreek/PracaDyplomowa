@@ -9,7 +9,7 @@ const Quiz = () => {
   
   return (
     <div className="main-wrapper">
-        <Menu />
+        <Menu component='/quiz' />
         <h1 className='main-header'>Quiz</h1>
         <Footer />
     </div>

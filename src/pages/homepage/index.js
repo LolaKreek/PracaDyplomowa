@@ -9,7 +9,7 @@ const Homepage = () => {
   
   return (
     <div className="main-wrapper">
-        <Menu />
+        <Menu component='/' />
         <h1 className='main-header'>Strona Główna</h1>
 
         <div className='main-wrapper__main-content-container'>

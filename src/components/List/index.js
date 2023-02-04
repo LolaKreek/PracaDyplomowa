@@ -25,7 +25,18 @@ const List = (props) => {
                     return <li key={list.id}><props.element alt='Icons' className={list.class} src={list.src} /></li>
                 })
             :   props.element === 'a' ?    props.lists.list.map(list => { 
-                    return <li key={list.id}><props.element href={list.href}>{list.text}</props.element></li>
+                    if(list.href == props.currentPage){
+                        if(list.href == '/'){
+                            return <li key={list.id} className='current-page left'><props.element href={list.href}>{list.text}</props.element></li>
+                        }
+                        else if(list.href == '/login'){
+                            return <li key={list.id} className='current-page right'><props.element href={list.href}>{list.text}</props.element></li>
+                        }else{
+                            return <li key={list.id} className='current-page'><props.element href={list.href}>{list.text}</props.element></li>
+                        }
+                    }else{
+                        return <li key={list.id}><props.element href={list.href}>{list.text}</props.element></li>
+                    }
             })
             :   <span></span>
         }
