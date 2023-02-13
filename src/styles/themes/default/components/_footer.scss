@@ -14,6 +14,15 @@
 
         .footer-content__main-header{
             @include flexBasis($fbs-30);
+
+            .footer__main-header__link{
+                text-decoration: none;
+                color: $c-white;
+                &:hover{
+                    transition: color .3s;
+                    color: $c-violet-red-opacity-100;
+                }
+            }
         }
         
         .footer-content__about-group{
@@ -35,18 +44,27 @@
         .footer-content__themes{
             @include flexBasis($fbs-10);
             padding: 0 $p-30px 0 $p-30px;
-            &:hover{
-                transition: color .3s;
-                color: $c-violet-red-opacity-100;
+            a{
+                text-decoration: none;
+                color: $c-white;
+                &:hover{
+                    transition: color .3s;
+                    color: $c-violet-red-opacity-100;
+                }
             }
         }
 
         .footer-content__about{
             @include flexBasis($fbs-10);
             padding: 0 $p-30px 0 $p-30px;
-            &:hover{
-                transition: color .3s;
-                color: $c-violet-red-opacity-100;
+            
+            a{
+                text-decoration: none;
+                color: $c-white;
+                &:hover{
+                    transition: color .3s;
+                    color: $c-violet-red-opacity-100;
+                }
             }
         }
         
@@ -82,15 +100,22 @@
         }
 
         .footer-content__browse-themes{
-            @include flexBasis($fbs-35);
+            @include flexBasis($fbs-40);
             text-align: center;
             border: 1px solid $c-white;
             &:hover{
                 cursor: pointer;
+                transition: border .3s;
+                border: 1px solid $c-violet-red-opacity-100;
             }
-
+    
             p{
                 margin: $m-10px $m-2px;
+
+                a{
+                    color: $c-white;
+                    text-decoration: none;
+                }
             }
         }
     }
@@ -127,13 +152,19 @@
                     font-weight: bold;
                 }
 
-                a{
+                .footer-group__policiesAndTerms, a{
                     color: $c-white;
                     margin: 0 $m-10px;
                     &:hover{
                         transition: color .3s;
                         color: $c-violet-red-opacity-100;
                     }
+                }
+
+                .footer-group__policiesAndTerms{
+                    text-decoration: underline;
+                    font-size: pxToRem(16px);
+                    font-weight: 400;
                 }
             }
         }
@@ -169,16 +200,59 @@
         }
     }
 
-    .main-content__copyright{
-        color: $c-white;
-        text-align: center;
-        margin: 0;
-    }
+    .main-content__container-for-copyright-content{
+        padding-top: 50px;
 
-    .main-content__footer-wishes{
-        color: $c-white;
-        text-align: center;
-        margin: 0;
-        padding: 0 0 $p-50px 0;
+        .main-content__copyright{
+            color: $c-white;
+            text-align: center;
+            margin: 0;
+        }
+
+        .main-content__footer-wishes{
+            color: $c-white;
+            text-align: center;
+            margin: 0;
+            padding: 0 0 $p-50px 0;
+        }
     }
+}
+
+//Tooltip
+[data-tooltip] {
+    position: relative;
+}
+
+//long Tooltip
+[data-tooltip]::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    width: 320px;
+    left: 0; top: 0;
+    background: $c-violet-red-opacity-100;
+    color: $c-white;
+    padding: 0.5em;
+    pointer-events: none;
+    opacity: 0;
+    transition: 1s;
+}
+
+//short Tooltip
+.footer__resources__short-tooltip[data-tooltip]::after{
+    content: attr(data-tooltip);
+    position: absolute;
+    width: 199px;
+    left: 0; top: 0;
+    background: $c-violet-red-opacity-100;
+    color: $c-white;
+    padding: 0.5em;
+    pointer-events: none;
+    opacity: 0;
+    transition: 1s;
+}
+
+
+[data-tooltip]:hover::after {
+    opacity: 1;
+    top: 2em;
 }
