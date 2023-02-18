@@ -29,9 +29,10 @@ const List = (props) => {
                         if(list.href == '/'){
                             return <li key={list.id} className='current-page left'><props.element href={list.href}>{list.text}</props.element></li>
                         }
-                        else if(list.href == '/login'){
+                        else if(list.href == '/login' || list.href == '/registration'){
                             return <li key={list.id} className='current-page right'><props.element href={list.href}>{list.text}</props.element></li>
-                        }else{
+                        }
+                        else{
                             return <li key={list.id} className='current-page'><props.element href={list.href}>{list.text}</props.element></li>
                         }
                     }else{

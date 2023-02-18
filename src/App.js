@@ -12,6 +12,7 @@ import { getFirestore } from "firebase/firestore";
 import { collection, getDocs } from "firebase/firestore";
 import Login from './pages/login';
 import Footer from './components/Footer';
+import Registration from './pages/registration';
 
 function App() {
     // Your web app's Firebase configuration
@@ -43,6 +44,7 @@ function App() {
         <Route path="/instruction" element={<Instruction />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/registration" element={<Registration />} />
       </Routes>
     </BrowserRouter>
   );

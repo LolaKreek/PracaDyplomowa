@@ -5,14 +5,36 @@ import components from '../index';
 const Menu = ({component}) => {
     // //Import of required components
     const {Print, List} = components;
+    let menuList;
 
-    const menuList = { list: [
+    if(component == "/registration"){
+        menuList = { list: [
+            {id: 1, href: '/', text: 'Strona Główna'},
+            {id: 2, href: '/quiz', text: 'Quiz'},
+            {id: 3, href: '/instruction', text: 'Instrukcja'},
+            {id: 4, href: '/profile', text: 'Profil'},
+            {id: 6, href: '/registration', text: 'Zarejestruj się'}
+        ]}
+    }else{
+        menuList = { list: [
             {id: 1, href: '/', text: 'Strona Główna'},
             {id: 2, href: '/quiz', text: 'Quiz'},
             {id: 3, href: '/instruction', text: 'Instrukcja'},
             {id: 4, href: '/profile', text: 'Profil'},
             {id: 5, href: '/login', text: 'Zaloguj się'}
         ]}
+    }
+
+    // const menuList = { list: [
+    //     {id: 1, href: '/', text: 'Strona Główna'},
+    //     {id: 2, href: '/quiz', text: 'Quiz'},
+    //     {id: 3, href: '/instruction', text: 'Instrukcja'},
+    //     {id: 4, href: '/profile', text: 'Profil'},
+    //     {id: 5, href: '/login', text: 'Zaloguj się'},
+    //     {id: 6, href: '/registration', text: 'Zarejestruj się'}
+    // ]}
+
+    
 
     return(
         <nav className="main-wrapper__menu menu">

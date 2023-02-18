@@ -33,11 +33,13 @@
             @include flex();
             @include flexDirection(column);
 
-            .input-user-name{
+            .input-user-email, .input-user-name, .input-password, .input-user-number{
                 width: $w-350px;
                 margin: 0 auto;
                 margin-bottom: $m-15px;
+            }
 
+            .input-user-name{
                 &[type=text]{
                     font-size: 16px;
                     padding: $p-5px 0 $p-5px $p-15px;
@@ -46,11 +48,23 @@
             }
 
             .input-password{
-                width: $w-350px;
-                margin: 0 auto;
-                margin-bottom: $m-15px;
-
                 &[type=password]{
+                    font-size: 16px;
+                    padding: $p-5px 0 $p-5px $p-15px;
+                    border-radius: $br-10px;
+                }
+            }
+
+            .input-user-email{
+                &[type=email]{
+                    font-size: 16px;
+                    padding: $p-5px 0 $p-5px $p-15px;
+                    border-radius: $br-10px;
+                }
+            }
+
+            .input-user-number{
+                &[type=number]{
                     font-size: 16px;
                     padding: $p-5px 0 $p-5px $p-15px;
                     border-radius: $br-10px;
@@ -95,10 +109,14 @@
         }
 
         .main-wrapper__registration-container{
-            padding-bottom: $p-10px;
+            padding: $p-20px;
 
             .registration-container__link{
-                text-align: center;
+                display: block;
+                width: 110px;
+                margin: 0 auto;
+                text-decoration: none;
+                color: $c-white;
             }
         }
     }
